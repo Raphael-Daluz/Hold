@@ -11,4 +11,4 @@ ENV PORT=3000
 ENV SECRET_KEY=officehours-dev-secret
 EXPOSE 3000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:3000", "app:app"]
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-3000} app:app"]
